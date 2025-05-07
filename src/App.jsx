@@ -4,6 +4,7 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0) // [current state, function that updates that state]
 
+
   const [counttext, setCountText] = useState(0)
   
   function handleClick() {
@@ -32,6 +33,7 @@ function App() {
     // Count the words by splitting on whitespace and filtering empty strings
     const wordCount = formJson.textInput.split(/\s+/).filter(word => word.length > 0).length;
     console.log(wordCount) 
+    setCountText(wordCount) //sets the word count to the state variable
 
     //now i need to display the result under the variable wordcount
   }
