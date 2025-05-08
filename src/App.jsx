@@ -6,21 +6,21 @@ function App() {
 
 
   const [counttext, setCountText] = useState(0)
-  
+
   function handleClick() {
     setCount(count + 1)
   }
 
-  function ThisButton({count, onClick}){
-    return(
+  function ThisButton({ count, onClick }) {
+    return (
       <button onClick={handleClick}>
-      Clicked {count} times
+        Clicked {count} times
       </button>
     )
   }
 
 
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault(); //prevents brower from reloading the page
 
     //read the data
@@ -31,39 +31,42 @@ function App() {
     // Access the textInput property from the data object
     // Count the words by splitting on whitespace and filtering empty strings
     const wordCount = formJson.textInput.split(/\s+/).filter(word => word.length > 0).length;
-    console.log(wordCount) 
+    console.log(wordCount)
     setCountText(wordCount) //sets the word count to the state variable
 
     //now i need to display the result under the variable wordcount
   }
-  
+
 
   return (
     <>
-    <form method="post" onSubmit={handleSubmit}>
-      <h1>Word counter project</h1>
+      <form method="post" onSubmit={handleSubmit}>
+        <h1>Word counter project</h1>
 
-      {/* <label  htmlFor={TextAreaId}> */}
-      <label >
-        
+        {/* <label  htmlFor={TextAreaId}> */}
+        <label >
+
           <h2>Input text below</h2>
-        <textarea
-          name="textInput"
-          placeholder="Type here..."
-          rows="10" cols="50" wrap="soft"/>
+          <textarea
+            name="textInput"
+            placeholder="Type here..."
+            className = "textarea"
+            rows="10" cols="50" wrap="soft" />
 
-      </label>
+        </label>
 
-
-        
-        {/* <ThisButton count={count} onClick={handleClick}/>*/}
-        <button type = "submit" className="CountButton">Count words</button>
 
         <p> Word count is {counttext}</p>
+        {/* <ThisButton count={count} onClick={handleClick}/>*/}
+        <button type="submit">Count words</button>
+
+        
+
+
         <p className="footer">
           My first react project!
         </p>
-    </form>
+      </form>
 
     </>
   )

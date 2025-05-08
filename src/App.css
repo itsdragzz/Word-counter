@@ -5,18 +5,20 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
 
 .footer {
   color: #888;
 }
 
-.CountButton{
-  position: relative;
+
+.textarea {  /* this can also be called just textarea - it will apply to eveywhere I use textarea*/
+  padding: 10px; /*creates padding around the text area*/
+  border-radius: 4px; /*corner is roundeded of*/
+  border: 1px solid #444; /*create border*/
+  background-color: #333;
+  color: white;
+  width: 100%; /*makes the textarea expand to fill 100% of container's width*/
+  box-sizing: border-box;
+  resize: none;
 }
+
