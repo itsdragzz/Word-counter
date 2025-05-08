@@ -19,7 +19,6 @@ function App() {
     )
   }
 
-  const TextAreaId = useId()
 
   function handleSubmit(e){
     e.preventDefault(); //prevents brower from reloading the page
@@ -39,38 +38,31 @@ function App() {
   }
   
 
-  function OutCountText(){
-    return(
-      <div>
-        <h2>Word count is</h2>
-        <p>{formData.textInput.split(" ").length}</p>
-      </div>
-    )
-  }
-
-
   return (
     <>
     <form method="post" onSubmit={handleSubmit}>
       <h1>Word counter project</h1>
 
+      {/* <label  htmlFor={TextAreaId}> */}
+      <label >
+        
+          <h2>Input text below</h2>
+        <textarea
+          name="textInput"
+          placeholder="Type here..."
+          rows="10" cols="50" wrap="soft"/>
 
-      <label htmlFor={TextAreaId}>
-        <h2>Input text below</h2>
-      <textarea
-        name="textInput"
-        placeholder="Type here..."
-        rows="10" cols="50" wrap="soft"/>
       </label>
 
 
-      <ThisButton count={count} onClick={handleClick}/>
-      <button type = "submit" >Count words</button>
+        
+        {/* <ThisButton count={count} onClick={handleClick}/>*/}
+        <button type = "submit" className="CountButton">Count words</button>
 
-      <p> Word count is {counttext}</p>
-      <p className="footer">
-        My first react project!
-      </p>
+        <p> Word count is {counttext}</p>
+        <p className="footer">
+          My first react project!
+        </p>
     </form>
 
     </>

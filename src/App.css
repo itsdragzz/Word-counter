@@ -16,3 +16,7 @@
 .footer {
   color: #888;
 }
+
+.CountButton{
+  position: relative;
+}
