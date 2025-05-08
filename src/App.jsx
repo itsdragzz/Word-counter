@@ -1,16 +1,22 @@
-import { useState, useId } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0) // [current state, function that updates that state]
+  
 
 
   const [counttext, setCountText] = useState(0)
+
+  const [AutoCounText, SetAutoCounText] = useState(0)
+
+
 
   function handleClick() {
     setCount(count + 1)
   }
 
+  /*
+  const [count, setCount] = useState(0) // [current state, function that updates that state]
   function ThisButton({ count, onClick }) {
     return (
       <button onClick={handleClick}>
@@ -18,7 +24,23 @@ function App() {
       </button>
     )
   }
+*/
+//const [text, setText] = useState('')  //this is for the useeffect hook
+/*
+  useEffect(() => {
+    const WcountAuto=formJson.textInput.split(/\s+/).filter(word => word.length > 0).length
+    SetAutoCounText(WcountAuto)
+  }, [text])
+*/
 
+function handleChangeOfText(e){
+//  setText(e.target.value)
+  console.log(e.target.value)
+
+  const WcountAuto = e.target.value.split(/\s+/).filter(word => word.length > 0).length
+
+  SetAutoCounText(WcountAuto)
+}
 
   function handleSubmit(e) {
     e.preventDefault(); //prevents brower from reloading the page
@@ -51,14 +73,17 @@ function App() {
             name="textInput"
             placeholder="Type here..."
             className = "textarea"
-            rows="10" cols="50" wrap="soft" />
+            rows="10" cols="50" wrap="soft" 
+            onChange={handleChangeOfText}
+            />
 
         </label>
 
-
-        <p> Word count is {counttext}</p>
-        {/* <ThisButton count={count} onClick={handleClick}/>*/}
+        <h2>Auto count text is: {AutoCounText} </h2>
         <button type="submit">Count words</button>
+        <h2> Click the button: word count is {counttext}</h2>
+        {/* <ThisButton count={count} onClick={handleClick}/>*/}
+        
 
         
 

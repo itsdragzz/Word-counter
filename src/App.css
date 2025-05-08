@@ -17,6 +17,7 @@
   border: 1px solid #444; /*create border*/
   background-color: #333;
   color: white;
+  height: 400px;
   width: 100%; /*makes the textarea expand to fill 100% of container's width*/
   box-sizing: border-box;
   resize: none;
