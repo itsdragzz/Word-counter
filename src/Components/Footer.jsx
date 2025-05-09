@@ -1,12 +1,12 @@
 import React from 'react'
-import './Footer.css'
+import styles from './Footer.module.css'
 
 
 function Footer() {
   return (
-    <div className="footer">
+    <div className={styles.footer}>
       <p>
-        My first react project!
+        My first react project from the footer component!
       </p>
     </div>
   )
