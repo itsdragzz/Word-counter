@@ -63,7 +63,7 @@ function App() {
 
 
   return (
-    <>
+    <main>
       <form method="post" onSubmit={handleSubmit}>
         <h1>Word counter project</h1>
 
@@ -96,7 +96,7 @@ function App() {
         
       </form>
 
-    </>
+    </main>
   )
 }
 
