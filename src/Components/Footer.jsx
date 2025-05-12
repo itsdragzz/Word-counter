@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className={styles.footer}>
       <p>
-        My first react project from the footer component!
+        My first react project from the footer component! 
       </p>
 
     </div>
